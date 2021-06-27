@@ -32,7 +32,7 @@ When('I move all cards from {string} to next stage', (columnName) => {
     });
 });
 
-Then('I verify {int} applicants present in {string} column', (number, column) => {
+Then('I verify {string} applicants present in {string} column', (number, column) => {
     cy.findByText(column).siblings('div').should('have.length', number);
 });
 

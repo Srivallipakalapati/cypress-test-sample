@@ -1,25 +1,38 @@
-# cypress-test-docker
+# cypress-test-sample
 
 Contains a suite of cypress tests that run against sample application
 Tests are written using a BDD syntax Given, When, Then 
 
 ### prerquisites
 Require yarn or node installed
-Using `cypress-cucumber-preprocessor` for BDD
 
 ### Running locally
-`yarn install` to install project dependencies
+Install project dependencies
 
-Everytime Cypress is installed, need to link cypress-cucumber-preprocessor with cypress using:
+`yarn install`
+
+Using `cypress-cucumber-preprocessor` for BDD. Everytime Cypress is installed, need to link cypress-cucumber-preprocessor with cypress using:
+
 `npm link cypress-cucumber-preprocessor`
 
 Make sure application is up and running and update the base url in `cypress.json` based on where the application is running.
 
 Runing tests via Cypress runner: 
+
 `yarn cypress open`
 
 Running a single test headlessly:
+
 `yarn cypress run --spec 'cypress/integration/**/verifyCrewApplicationSearchFunctionality.feature'`
+
+### Running in Docker
+Build the image:
+
+`docker build -t cypress-test-sample:1.0.0 .`
+
+Run the container:
+
+`docker run -t cypress-test-sample:1.0.0 .`
 
 ### Features
 
